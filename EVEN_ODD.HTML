@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function checkEvenOrOdd() {
+            const userInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            let number = parseInt(userInput);
+
+            if (isNaN(number)) {
+                resultElement.textContent = "Please enter a valid number.";
+            } else {
+                if (number % 2 === 0) {
+                    resultElement.textContent = number + " is even.";
+                } else {
+                    resultElement.textContent = number + " is odd.";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p class="result" id="result"></p>
+</body>
+</html>
